@@ -25,11 +25,12 @@ class Translator:
                 retry=3, sleep=5, retry_messgae=False):
         self.host = host if 'http' in host else 'https://' + host
         self.rpcids = RPCIDS
-        self.transurl = urls.TRANSLATEURL
+#         
         if proxies is not None:
-            self.proxies = proxies
+            self.transurl = proxies
         else:
-            self.proxies = None
+#             self.proxies = None
+            self.transurl = urls.TRANSLATEURL
         
         if timeout is not None:
             self.timeout = timeout
